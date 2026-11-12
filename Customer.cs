@@ -1,0 +1,1 @@
+public record Customer(int id, string name, string address, string email, string phone);

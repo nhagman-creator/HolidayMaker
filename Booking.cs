@@ -1,0 +1,1 @@
+public record Booking(ulong booking_number, int customer_id, byte number_of_occupants, ushort room_id, DateOnly start_date, DateOnly end_date, ushort status_id, Enum currency, decimal total_price);
