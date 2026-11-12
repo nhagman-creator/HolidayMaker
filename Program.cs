@@ -15,12 +15,19 @@ var repository = new BookingRepository(connection);
 
 // ANVÄNDER repository för att hämta data
 
-// 1. READ: hämta alla produkter som en lista.
-
+// 1. READ: hämta alla kunder som en lista.
+List<Customer> customers = await repository.GetCustomersAsync();
+Console.WriteLine("Alla kunder:");
+foreach (Customer customer in customers)
+{
+    Console.WriteLine(customer);
+}
+/*
 // 2. CREATE: skapa en kund och ta emot databasens nya id.
 int newId = await repository.CreateCustomerAsync("Laban Lindqvist", "Östergatan 8, 211 34 Malmö, Sweden", "laban.lindqvist@example.se", "+46 70-174 06 17");
 Console.WriteLine($"Ny kund med id: {newId}");
 
 // 3. READ: hämta den nya kunden som ett enstaka objekt.
-Customer? created = await repository.GetProductAsync(newId);
+Customer? created = await repository.GetCustomerAsync(newId);
 Console.WriteLine(created is null ? "Kunden saknas." : created.ToString());
+*/
